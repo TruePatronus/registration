@@ -17,7 +17,7 @@ router.post('/signup', (req, res) => {
 			message: "Failed to create user"
 		});
 	}
-	bcrypt.hash(req.body.password, 10, (err, hash) => {
+	bcrypt.hash(password, 10, (err, hash) => {
 		if (err) {
 			return res.status(500).json({
 				error: err
@@ -49,10 +49,7 @@ router.post('/signin', (req, res) => {
 						email,
 						id: user.id
 					}
-					const JWTToken = jwt.sign({
-						email: user.email,
-						id: user.id
-					},
+					const JWTToken = jwt.sign(payload,
 					'secret',
 					{
 						expiresIn: '2h'
