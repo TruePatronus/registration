@@ -1,9 +1,9 @@
 #Authorization API with express, postgreSQL, jwt
 --------------
-##Running app
+##Running app##
 Type 'npm i' to install dependancies
 Type 'npm start' to run the application
-##Usage
+##Usage##
 User can be registered by sending POST request to __localhost:3000/user/signup__ 
 with these JSON params: **login email password password_repeat**  
 
