@@ -2,16 +2,18 @@ const Pool = require('pg').Pool;
 
 const pool = new Pool({
 	user: 'postgres',
-	host: 'localhost',
-	database: 'registration',
+	host: 'db',
+	database: 'postgres',
 	password: 'postgres',
 	port: 5432
 });
 
-const createUser = (login, email, hashed_pass) => {
+const createUser = (login, email, hashed_password) => {
+	console.log('CREATE USER START');
 	return new Promise((resolve, reject) => {
-		pool.query('INSERT INTO users (login, email, hashed_pass) VALUES($1, $2, $3)', [login, email, hashed_pass], (err, results) => {
+		pool.query('INSERT INTO users (login, email, hashed_password) VALUES($1, $2, $3)', [login, email, hashed_password], (err, results) => {
 			if (err) {
+				console.log("ERROR", err);
 				reject({
 					success: false,
 					message: 'Registration failed'

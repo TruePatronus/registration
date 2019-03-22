@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/checking', (req, res) => {
 	res.json({
-		"Tutorial":"Welcome to JWT Tut"
+		"Message":"Welcome to Express PostgreSQL JWT Auth app"
 	});
 });
 

@@ -1,0 +1,6 @@
+CREATE TABLE users(
+	id bigserial PRIMARY KEY,
+	login VARCHAR(20) UNIQUE NOT NULL,
+	email VARCHAR(40) UNIQUE NOT NULL,
+	hashed_password VARCHAR(100) UNIQUE NOT NULL
+);
