@@ -5,7 +5,7 @@ Authorization API with express, postgreSQL, jwt
 
 Running app
 -----
-Type 'npm i' to install dependancies
+Type 'npm i' to install dependencies
 Type 'npm start' to run the application
 
 Usage
